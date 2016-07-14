@@ -16,13 +16,16 @@ for iter = 1:num_iters
     % Hint: While debugging, it can be useful to print out the values
     %       of the cost function (computeCost) and gradient here.
     %
-
-
-
-
-
-
-
+    % For each theta value being optimised
+    
+    hx = (theta' * X')';
+    a = hx - y;
+    
+    for i = 1:length(theta)
+       
+        theta(i) = theta(i) - (alpha/m * sum(a' * X(:,i)));
+        
+    end
     % ============================================================
 
     % Save the cost J in every iteration    
