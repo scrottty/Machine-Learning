@@ -12,8 +12,8 @@ figure; hold on;
 %               examples and 'ko' for the negative examples.
 %
 
-
-
+plot(X(y==1,1),X(y==1,2), 'k+', 'LineWidth', 2)
+plot(X(y==0,1),X(y==0,2), 'ko', 'MarkerFaceColor', 'y')
 
 
 
