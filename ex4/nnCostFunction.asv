@@ -98,14 +98,9 @@ Delta1 = d2' * a1;
 Delta2 = d3' * a2;
 
 % Gradient at each layer
-Theta1_grad = Delta1/m;
-Theta2_grad = Delta2/m;
+Theta1_grad = Delta1/m + lambda/m * Theta1(:,2:end);
+Theta2_grad = Delta2/m + lambda/m * Theta2(:,2:end);
 
-Theta1_reg = [zeros(size(Theta1,1),1) , Theta1(:,2:end)];
-Theta2_reg = [zeros(size(Theta2,1),1) , Theta2(:,2:end)];
-
-Theta1_grad = Theta1_grad + lambda/m * Theta1_reg;
-Theta2_grad = Theta2_grad + lambda/m * Theta2_reg;
 
 
 
